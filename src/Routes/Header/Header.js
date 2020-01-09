@@ -8,8 +8,18 @@ import PortContext from "../../Context/Context";
 
 export default class Header extends Component {
   static contextType = PortContext;
-  fullScreenMenu = () => {
-    const { display } = this.context;
+  state ={
+    display: false,
+  }
+  setDisplay(){
+    if (this.state.display === false) {
+       this.setState({ display: true });
+    } else {
+       this.setState({ display: false });
+    }
+  };
+  fullScreenMenu = (display) => {
+  
     if (display === false) {
       return null;
     } else {
@@ -33,9 +43,6 @@ export default class Header extends Component {
       );
     }
   };
-  componentDidMount(){
-    this.context.setDisplay(true)
-  }
   render() {
     const { display } = this.context;
     console.log(display);
@@ -45,7 +52,7 @@ export default class Header extends Component {
           <Link exact to="/">
             <h1>Max Kaplan</h1>
           </Link>
-          <a href="#" onClick={this.context.setDisplay()}>
+          <a href="#" onClick={this.setDisplay()}>
             {!display ? (
               <FontAwesomeIcon icon={faBars} className="icon" />
             ) : (

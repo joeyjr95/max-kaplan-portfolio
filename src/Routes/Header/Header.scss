@@ -5,7 +5,7 @@ header{
     position: absolute;
 
     >.flexBody{
-        
+       
         width: inherit;
         display: flex;
         flex-direction: row;
@@ -27,8 +27,11 @@ header{
         }
     }
     >.fullscreen-menu{
-        height: 100vh;
-        width: 100%;
+        background-color: rgba(0, 0, 0, 0.596);
+        height: 92vh;
+        margin-left: .5em;
+        margin-right: .5em;
+        margin-top: .5em;
         display: flex;
         align-items: center;
         flex-direction: column;
