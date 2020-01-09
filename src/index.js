@@ -11,7 +11,6 @@ ReactDOM.render(
     <App />
     </PortProvider>
   </BrowserRouter>,
-  document.getElementById("root"),
-  console.log(PortProvider)
+  document.getElementById("root")
 );
 

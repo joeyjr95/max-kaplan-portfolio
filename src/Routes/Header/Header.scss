@@ -29,6 +29,7 @@ header{
     >.fullscreen-menu{
         background-color: rgba(0, 0, 0, 0.596);
         height: 100vh;
+        overflow-y: hidden;
         margin-top: .5em;
         display: flex;
         align-items: center;

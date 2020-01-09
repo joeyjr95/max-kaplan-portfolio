@@ -10,9 +10,11 @@ export default class Header extends Component {
   static contextType = PortContext;
   fullScreenMenu = display => {
     if (display === false) {
+      document.body.style.overflow = 'unset'
       return null;
     } else {
-      return (
+      document.body.style.overflow = 'hidden'
+      return  (
         <div className="fullscreen-menu">
           <ul>
             <li>
@@ -32,13 +34,14 @@ export default class Header extends Component {
       );
     }
   };
+  
 
   render() {
     const { display } = this.context;
     return (
       <header>
         <div className="flexBody">
-          <Link exact to="/">
+          <Link to="/">
             <h1>Max Kaplan</h1>
           </Link>
           <a href="#" onClick={() => this.context.setDisplay()}>
