@@ -8,7 +8,7 @@ export default class Dates extends Component {
       <div className="landing-venue-info">
         <h3>Upcoming Dates</h3>
         {shows.map(venue => (
-          <ul className={`venue-${venue.id}`}>
+          <ul className={`venue-${venue.id}`} key={venue.id}>
             <li>{venue.date}</li>
             <li>{venue.name}</li>
             <li>{venue.location}</li>

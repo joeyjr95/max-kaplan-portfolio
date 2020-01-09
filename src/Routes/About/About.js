@@ -8,7 +8,7 @@ export default class About extends Component {
         <div className="landing-about">
         <h3>About Max</h3>
         {bio.map(para => (
-          <p>{" "}{para.paragraph}</p>
+          <p key={para.id}>{" "}{para.paragraph}</p>
         ))}
       </div>
     );

@@ -4,19 +4,12 @@ import { Link } from "react-router-dom";
 import "./Header.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes} from "@fortawesome/free-solid-svg-icons";
+import PortContext from "../../Context/Context";
 
 export default class Header extends Component {
-  state = {
-    display: false
-  };
-  displayMenu() {
-    if (this.state.display === false) {
-      this.setState({ display: true });
-    } else {
-      this.setState({ display: false });
-    }
-  }
-  fullScreenMenu = display => {
+  static contextType = PortContext;
+  fullScreenMenu = () => {
+    const { display } = this.context;
     if (display === false) {
       return null;
     } else {
@@ -40,9 +33,11 @@ export default class Header extends Component {
       );
     }
   };
-
+  componentDidMount(){
+    this.context.setDisplay(true)
+  }
   render() {
-    const { display } = this.state;
+    const { display } = this.context;
     console.log(display);
     return (
       <header>
@@ -50,7 +45,7 @@ export default class Header extends Component {
           <Link exact to="/">
             <h1>Max Kaplan</h1>
           </Link>
-          <a href="#" onClick={() => this.displayMenu()}>
+          <a href="#" onClick={this.context.setDisplay()}>
             {!display ? (
               <FontAwesomeIcon icon={faBars} className="icon" />
             ) : (
