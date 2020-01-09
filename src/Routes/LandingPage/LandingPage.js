@@ -3,7 +3,9 @@ import PortContext from '../../Context/Context';
 import "./LandingPage.scss";
 export default class LandingPage extends Component {
   static contextType = PortContext;
-  
+  componentDidMount(){
+    this.context.defaultDisplay()
+  }
   render() {
     const { shows = [], bio=[] } = this.context;
     return (
