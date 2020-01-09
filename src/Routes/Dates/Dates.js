@@ -8,7 +8,7 @@ export default class Dates extends Component {
   }
   render() {
     const { shows = [] } = this.context;
-
+    
     return (
       <div className="venue-info">
         <h3>Upcoming Dates</h3>
