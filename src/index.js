@@ -7,10 +7,11 @@ import { PortProvider } from "./Context/Context";
 
 ReactDOM.render(
   <BrowserRouter>
-    <PortProvider />
+    <PortProvider>
     <App />
-    <PortProvider />
+    </PortProvider>
   </BrowserRouter>,
-  document.getElementById("root")
+  document.getElementById("root"),
+  console.log(PortProvider)
 );
 

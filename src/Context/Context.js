@@ -2,7 +2,7 @@ import React, { Component } from "react";
 const PortContext = React.createContext({
   photos: [],
   videos: [],
-  display: true,
+  display: false,
   bio: [
     {
       id: 1,
@@ -68,6 +68,7 @@ const PortContext = React.createContext({
     }
   ],
   setDisplay: () => {},
+  defaultDisplay: () => {},
 });
 export default PortContext;
 
@@ -140,6 +141,7 @@ export class PortProvider extends Component {
       }
     ],
     display: false,
+    
   };
   setDisplay = () => {
     if (this.state.display === false) {
@@ -148,6 +150,9 @@ export class PortProvider extends Component {
        this.setState({ display: false });
     }
   };
+  defaultDisplay = () => {
+    this.setState({display: false})
+  }
   render() {
     const value = {
       photos: this.state.photos,
@@ -156,11 +161,12 @@ export class PortProvider extends Component {
       shows: this.state.shows,
       display: this.state.display,
       setDisplay: this.setDisplay,
+      defaultDisplay: this.defaultDisplay,
     };
     return (
       <PortContext.Provider value={value}>
         {this.props.children}
       </PortContext.Provider>
-    );
+    )
   }
 }

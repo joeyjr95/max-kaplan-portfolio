@@ -3,6 +3,9 @@ import PortContext from "../../Context/Context";
 import './About.scss'
 export default class About extends Component {
   static contextType = PortContext;
+  componentDidMount(){
+    this.context.defaultDisplay()
+  }
   render() {
     const { bio = [] } = this.context;
     return (
