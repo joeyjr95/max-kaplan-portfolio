@@ -24,10 +24,10 @@ export default class Header extends Component {
         <div className="fullscreen-menu">
           <ul>
             <li>
-              <Link to="/Dates">Upcoming Shows</Link>
+              <Link to="/shows">Upcoming Shows</Link>
             </li>
             <li>
-              <Link to="/About">About Max</Link>
+              <Link to="/about">About Max</Link>
             </li>
             <li>
               <Link to="/Media">Media</Link>
