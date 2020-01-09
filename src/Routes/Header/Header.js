@@ -27,7 +27,7 @@ export default class Header extends Component {
               <Link to="/Dates">Upcoming Shows</Link>
             </li>
             <li>
-              <Link to="/About">About Me</Link>
+              <Link to="/About">About Max</Link>
             </li>
             <li>
               <Link to="/Media">Media</Link>
